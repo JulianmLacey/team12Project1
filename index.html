@@ -1,1 +1,44 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .custom-background {
+          background-color: teal;
+          background-size: cover;
+        }
+      </style>
+    
+</head>
+<body class="custom-background">
+    <header class="bg-blue-800 py-4 px-8">
+        <div class="container mx-auto flex items-center justify-center">
+          <a href="#" class="text-white text-7xl font-bold">BEST PLACE?</a>
+        </header>
+    <section>
+        <p class="text-white text-3xl">Please search the city you are interested in</p>
+    </section>
+
+        <div class="flex">
+            <input type="text" placeholder="Search" class="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button type="button" class="px-4 py-2 bg-green-500 text-white font-semibold rounded-r-md hover:bg-blue-600">Search</button>
+        </div>
+
+        <div>
+            <p>Below are the results for the searches you input</p>
+        </div>
+      
+
+        <div class="flex relative top-20 gap-20 mt-9 justify-center">
+            <div class="w-1/4 h-96 bg-gray-200 p-4">Column 1</div>
+            <div class="w-1/4 h-96 bg-gray-200 p-4 ">Column 1</div>
+            <div class="w-1/4 h-96 bg-gray-200 p-4">Column 1</div>
+        </div>
+        
+
+</body>
+</html>
