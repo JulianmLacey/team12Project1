@@ -25,9 +25,8 @@
         <p class="text-white text-3xl font-semibold ">Search City</p>
     </section>
 
-        <div class="flex">
+        <form id="search" class="flex">
             <input id="city-search" type="text" placeholder="Search" class="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <button type="button" class="px-4 py-2 bg-green-500 text-white font-semibold rounded-r-md hover:bg-blue-600">Search</button>
         </div>
        <!-- <nav class="bg-gray-900">
             <div class="max-w-7xl mx-auto px-4">
@@ -40,6 +39,8 @@
               </div>
             </div>
           </nav>-->
+            <button type="submit" class="px-4 py-2 bg-green-500 text-white font-semibold rounded-r-md hover:bg-blue-600">Search</button>
+        </form>
 
         <div class="justify-center p-9 text-6xl text-black flex ml-auto bg-green-500 bg-cover mt-9 text-center">
             <p>Below are the results for the searches you input</p>
@@ -50,25 +51,24 @@
         </div>-->
       
 
-        <div class="flex relative top-20 gap-20 mt-9 justify-center">
+        <div id="city-one" class="flex relative top-20 gap-20 mt-9 justify-center">
             <div class="w-1/4 h-96 bg-gray-200 p-4">Column 1
                 <li>Info here</li>
                 <li>Info here</li>
                 <li>Info here</li>
             </div>
-            <div class="w-1/4 h-96 bg-gray-200 p-4 ">Column 2
+            <div id="city-two" class="w-1/4 h-96 bg-gray-200 p-4 ">Column 2
               <li>Info here</li>
                 <li>Info here</li>
                 <li>Info here</li>
             </div>
           
-            <div class="w-1/4 h-96 bg-gray-200 p-4">Column 3
+            <div id="city-three" class="w-1/4 h-96 bg-gray-200 p-4">Column 3
               <li>Info here</li>
                 <li>Info here</li>
                 <li>Info here</li>
-            </div>
-        </div>
         
-
+        
+        <script src="./assets/js/script.js"></script>
 </body>
 </html>
