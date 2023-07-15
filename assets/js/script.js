@@ -76,8 +76,14 @@
 // dojCrime()
 
 function searchCity() {
-    const url = 'https://find-places-to-live.p.rapidapi.com/location?query=belmont';
-const options = {
+    var searchForm = document.getElementById("search")
+    var searchBar = document.getElementById("city-search")
+    var cityStateSelect = document.createElement("select");
+    
+    var searchInput = searchBar.value
+
+    const url = `https://find-places-to-live.p.rapidapi.com/location?query=${searchInput}`;
+    const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': 'ef09a4f5bbmsh3dd4fee7e15cf2ep1c973ejsna3a2ad737be5',
@@ -88,8 +94,7 @@ const options = {
         console.log(response)
         return response.json()
     }).then(function (data) {
-        var searchInput = document.getElementById("city-search").value
-        var cityStateSelect = document.createElement("select");
+        
 
         // iterate through the data array of all the different cities and turn them into
         // a dropdown menu for the user to select the correct city and state
@@ -98,36 +103,56 @@ const options = {
             cityOption.textContent = `${city.label}, ${city.state}`
             cityStateSelect.appendChild(cityOption) 
         })
-        searchInput.appendChild(cityStateSelect)
+        searchForm.appendChild(cityStateSelect)
+        console.log(searchBar)
+
         
-        searchInput.addEventListener("change", function() {
+        cityStateSelect.addEventListener("change", function() {
             getRentPrices(cityOption.urlFragment, cityOption.type)
         })
     })
 }
+// searchCity()
 
 
-function getRentPrices(city, type) {
-    const url = `https://find-places-to-live.p.rapidapi.com/placesToLive?place=${city}&type=${type}`;
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'ef09a4f5bbmsh3dd4fee7e15cf2ep1c973ejsna3a2ad737be5',
-		'X-RapidAPI-Host': 'find-places-to-live.p.rapidapi.com'
-	}
-};
+// function getRentPrices(city, type) {
+//     const url = `https://find-places-to-live.p.rapidapi.com/placesToLive?place=${city}&type=${type}`;
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': 'ef09a4f5bbmsh3dd4fee7e15cf2ep1c973ejsna3a2ad737be5',
+// 		'X-RapidAPI-Host': 'find-places-to-live.p.rapidapi.com'
+// 	}
+// };
 
-    fetch(url, options).then(function (response) {
-        console.log(response)
-        return response.json()
-    }).then(function (data) {
-        var medianRent = data.real-estate["Median Rent"]
-        var medianHomeVal = data.real-estate["Median Home Value"]
-        var crimeStats = data.report-card["Crime & Safety"]
+//     fetch(url, options).then(function (response) {
+//         console.log(response)
+//         return response.json()
+//     }).then(function (data) {
+//         var medianRent = data.real-estate["Median Rent"].value;
+//         var medianHomeVal = data.real-estate["Median Home Value"];
+//         var reportCard = data.report-card;
+//         var cityOne = document.getElementById("city-one");
+
+//         var rent = document.createElement("ul")
+//         rent.textContent = medianRent
+
+//         var reportCardList = Object.keys(reportCard);
+//         console.log(reportCardList)
+
+//         // need job income. will attempt to set background color of median income based on earning
+//         if (medianRent < jobIncome) {
+//             medianRent.style.backgroundColor = "green"
+//         } else if (Math.floor(jobIncome *.5) < medianRent) {
+//             medianRent.style.backgroundColor = "yellow"
+//         } else {
+//             medianRent.style.backgroundColor = "red"
+//         }
+
+
         
-
-    })
-}
+//     })
+// }
 
 // getRentPrices()
 

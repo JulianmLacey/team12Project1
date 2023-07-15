@@ -25,10 +25,10 @@
         <p class="text-white text-3xl">Please search the city you are interested in</p>
     </section>
 
-        <div class="flex">
+        <form id="search" class="flex">
             <input id="city-search" type="text" placeholder="Search" class="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <button type="button" class="px-4 py-2 bg-green-500 text-white font-semibold rounded-r-md hover:bg-blue-600">Search</button>
-        </div>
+            <button type="submit" class="px-4 py-2 bg-green-500 text-white font-semibold rounded-r-md hover:bg-blue-600">Search</button>
+        </form>
 
         <div class="justify-center p-9 text-6xl text-black flex ml-auto">
             <p>Below are the results for the searches you input</p>
@@ -40,11 +40,11 @@
       
 
         <div class="flex relative top-20 gap-20 mt-9 justify-center">
-            <div class="w-1/4 h-96 bg-gray-200 p-4">Column 1</div>
-            <div class="w-1/4 h-96 bg-gray-200 p-4 ">Column 1</div>
-            <div class="w-1/4 h-96 bg-gray-200 p-4">Column 1</div>
+            <div id="city-one" class="w-1/4 h-96 bg-gray-200 p-4">Column 1</div>
+            <div id="city-two" class="w-1/4 h-96 bg-gray-200 p-4 ">Column 1</div>
+            <div id="city-three" class="w-1/4 h-96 bg-gray-200 p-4">Column 1</div>
         </div>
         
-
+        <script src="./assets/js/script.js"></script>
 </body>
 </html>
