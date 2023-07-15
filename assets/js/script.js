@@ -119,9 +119,15 @@ function searchCity(searchInput) {
 
             cityStateSelect.addEventListener("change", function() {
                 var selectedCity = cityStateSelect.options[cityStateSelect.selectedIndex]
-                var cityUrl = selectedCity.getAttribute("name")
+                
+                // will need to find a way to change city name textContent dynamically 
+                var cityNameDisplay = document.getElementById("city-1");
+
+                cityNameDisplay.textContent = selectedCity.textContent
+                var cityUrl = selectedCity.getAttribute("name");
                 var cityType = selectedCity.getAttribute("type");
                 
+
                 getRentPrices(cityUrl, cityType)
                 console.log(typeof selectedCity.type)
                 debugger
@@ -148,26 +154,29 @@ const options = {
         return response.json()
     }).then(function (data) {
         console.log(data)
-        // var medianRent = data["real-estate"]["Median Rent"]["value"];
-       // var medianHomeVal = data["real-estate"]["Median Home Value"];
-       // var reportCard = data["report-card"];
-       // console.log(reportCard)
-       // var cityOne = document.getElementById("city-one");
-//
-       // var rent = document.createElement("ul")
-       // rent.textContent = medianRent
-//
-       // var reportCardList = Object.keys(reportCard);
-       // console.log(reportCardList)
-//
-       // // need job income. will attempt to set background color of median income based on earning
-       // if (medianRent < jobIncome) {
-       //     medianRent.style.backgroundColor = "green"
-       // } else if (Math.floor(jobIncome *.5) < medianRent) {
-       //     medianRent.style.backgroundColor = "yellow"
-       // } else {
-       //     medianRent.style.backgroundColor = "red"
-       // }
+        var medianRent = data["real-estate"]["Median Rent"]["value"];
+    
+    
+    
+    //    var medianHomeVal = data["real-estate"]["Median Home Value"];
+    //    var reportCard = data["report-card"];
+    //    console.log(reportCard)
+    //    var cityOne = document.getElementById("city-one");
+
+    //    var rent = document.createElement("ul")
+    //    rent.textContent = medianRent
+
+    //    var reportCardList = Object.keys(reportCard);
+    //    console.log(reportCardList)
+
+    //    // need job income. will attempt to set background color of median income based on earning
+    //    if (medianRent < jobIncome) {
+    //        medianRent.style.backgroundColor = "green"
+    //    } else if (Math.floor(jobIncome *.5) < medianRent) {
+    //        medianRent.style.backgroundColor = "yellow"
+    //    } else {
+    //        medianRent.style.backgroundColor = "red"
+    //    }
 
 
         
