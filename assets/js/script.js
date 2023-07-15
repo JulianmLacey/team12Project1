@@ -1,3 +1,5 @@
+// *Jerome suggested that this be considered a stretch challenge, so only prioritize it after we complete core features
+
 // let map;
 // let center;
 
@@ -59,11 +61,36 @@
 
 // initMap();
 
-var url = "https://data.ojp.usdoj.gov/resource/gcuy-rt5g"
+// *Jerome suggested that this be considered a stretch challenge, so only prioritize it after we complete core features
+// function dojCrime() {
+//     var url = "https://data.ojp.usdoj.gov/resource/gcuy-rt5g.json?year=2021&$limit=500"
+    
+//     fetch(url).then(function (response) {
+//         console.log(response)
+//         return response.json()
+//     }).then(function(data){
+//         console.log(data)
+//     })
+// }
 
-fetch(url).then(function (response) {
-    console.log(response)
-    return response.json()
-}).then(function(data){
-    console.log(data)
-})
+// dojCrime()
+
+function getRentPrices() {
+    const url = 'https://find-places-to-live.p.rapidapi.com/placesToLive?place=belmont-san-mateo-ca&type=Town';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'ef09a4f5bbmsh3dd4fee7e15cf2ep1c973ejsna3a2ad737be5',
+		'X-RapidAPI-Host': 'find-places-to-live.p.rapidapi.com'
+	}
+};
+
+    fetch(url, options).then(function (response) {
+        console.log(response)
+        return response.json()
+    }).then(function (data){
+        console.log(data)
+    })
+}
+
+getRentPrices()
