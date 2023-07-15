@@ -75,8 +75,40 @@
 
 // dojCrime()
 
-function getRentPrices() {
-    const url = 'https://find-places-to-live.p.rapidapi.com/placesToLive?place=belmont-san-mateo-ca&type=Town';
+function searchCity() {
+    const url = 'https://find-places-to-live.p.rapidapi.com/location?query=belmont';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'ef09a4f5bbmsh3dd4fee7e15cf2ep1c973ejsna3a2ad737be5',
+		'X-RapidAPI-Host': 'find-places-to-live.p.rapidapi.com'
+	}
+};
+    fetch(url, options).then(function (response) {
+        console.log(response)
+        return response.json()
+    }).then(function (data) {
+        var searchInput = document.getElementById("city-search").value
+        var cityStateSelect = document.createElement("select");
+
+        // iterate through the data array of all the different cities and turn them into
+        // a dropdown menu for the user to select the correct city and state
+        data.forEach(city => {
+            var cityOption = document.createElement("option")
+            cityOption.textContent = `${city.label}, ${city.state}`
+            cityStateSelect.appendChild(cityOption) 
+        })
+        searchInput.appendChild(cityStateSelect)
+        
+        searchInput.addEventListener("change", function() {
+            getRentPrices(cityOption.urlFragment, cityOption.type)
+        })
+    })
+}
+
+
+function getRentPrices(city, type) {
+    const url = `https://find-places-to-live.p.rapidapi.com/placesToLive?place=${city}&type=${type}`;
 const options = {
 	method: 'GET',
 	headers: {
@@ -88,9 +120,14 @@ const options = {
     fetch(url, options).then(function (response) {
         console.log(response)
         return response.json()
-    }).then(function (data){
-        console.log(data)
+    }).then(function (data) {
+        var medianRent = data.real-estate["Median Rent"]
+        var medianHomeVal = data.real-estate["Median Home Value"]
+        var crimeStats = data.report-card["Crime & Safety"]
+        
+
     })
 }
 
-getRentPrices()
+// getRentPrices()
+
