@@ -1,1 +1,3 @@
-I enjoy JavaScript because it utilizes both Functional programming and Object-oriented programming.
+
+![example api](image.png)<br>
+![example api2](image-1.png)
