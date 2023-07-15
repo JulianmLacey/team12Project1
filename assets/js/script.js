@@ -75,42 +75,54 @@
 
 // dojCrime()
 
-function searchCity() {
+
+var submitCity = document.getElementById("submit-city")
+
+submitCity.addEventListener("click", function() {
+    var searchInput = document.getElementById("city-search").value;
+    searchCity(searchInput)
+})
+
+function searchCity(searchInput) {
     var searchForm = document.getElementById("search")
-    var searchBar = document.getElementById("city-search")
-    var cityStateSelect = document.createElement("select");
     
-    var searchInput = searchBar.value
-
-    const url = `https://find-places-to-live.p.rapidapi.com/location?query=${searchInput}`;
-    const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'ef09a4f5bbmsh3dd4fee7e15cf2ep1c973ejsna3a2ad737be5',
-		'X-RapidAPI-Host': 'find-places-to-live.p.rapidapi.com'
-	}
-};
-    fetch(url, options).then(function (response) {
-        console.log(response)
-        return response.json()
-    }).then(function (data) {
+    // submitCity.addEventListener("click", function(evt) {
+    //     evt.preventDefault();     
         
+        // var searchBar = document.getElementById("city-search")
+        var cityStateSelect = document.createElement("select");
 
-        // iterate through the data array of all the different cities and turn them into
-        // a dropdown menu for the user to select the correct city and state
-        data.forEach(city => {
-            var cityOption = document.createElement("option")
-            cityOption.textContent = `${city.label}, ${city.state}`
-            cityStateSelect.appendChild(cityOption) 
-        })
-        searchForm.appendChild(cityStateSelect)
-        console.log(searchBar)
-
+        const url = `https://find-places-to-live.p.rapidapi.com/location?query=${searchInput}`;
+        const options = {
+	    method: 'GET',
+	    headers: {
+	    	'X-RapidAPI-Key': 'ef09a4f5bbmsh3dd4fee7e15cf2ep1c973ejsna3a2ad737be5',
+	    	'X-RapidAPI-Host': 'find-places-to-live.p.rapidapi.com'
+	        }
+        };
         
-        cityStateSelect.addEventListener("change", function() {
-            getRentPrices(cityOption.urlFragment, cityOption.type)
+        fetch(url, options)
+            .then(function (response) {
+                console.log(response)
+                return response.json()
         })
-    })
+            .then(function (data) {
+            console.log(data)
+
+            // iterate through the data array of all the different cities and turn them into
+            // a dropdown menu for the user to select the correct city and state
+            data.forEach(city => {
+                var cityOption = document.createElement("option")
+                cityOption.textContent = `${city.label}, ${city.state}`
+                cityStateSelect.appendChild(cityOption) 
+            })
+            searchForm.appendChild(cityStateSelect)
+
+            cityStateSelect.addEventListener("change", function() {
+                getRentPrices(cityOption.urlFragment, cityOption.type)
+            })
+        })
+    // })
 }
 // searchCity()
 
