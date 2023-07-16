@@ -582,22 +582,64 @@ function getRentPrices(city, type) {
     rent.textContent = "Median Rent: " + "$" + medianRent.toString();
     own.textContent = "Median Home Price: " + "$" + medianHome.toString();
     
-    var reportCard = data["report-card"];
-    var reportArr =  Object.keys(reportCard)
-    console.log(reportArr)
-    
-    var htmlString = '';
-    var targetElement = document.getElementById("cityReport");
+    var reportCard = data["report-card"];      
+    var reportScores = Object.values(reportCard)
 
-    for (var key in reportCard) {
-      if (reportCard.hasOwnProperty(key)) {
-        htmlString += '<p>' + key + ': ' + reportCard[key] + '</p>';
-      }
-    }
     
-    targetElement.innerHTML = htmlString;
+    var count = 0
+    reportScores.forEach(score => {
+        var li = document.createElement("li")
+        li.textContent = Object.keys(reportCard)[count] + ": " + score["value"]
+        count ++
+        own.appendChild(li)
+    })
+
+    console.log(reportScores)
+
+    // function getAllReportScores(obj) {
+    //     var htmlString = '';
+        
+    //     for (var key in reportCard) {
+    //         if (reportCard.hasOwnProperty(key)) {
+    //             var value = reportCard[key];
+                
+    //             if (typeof value === "object" && value !== null) {
+    //                 // var nestedHTML = getAllReportScores(value)
+    //                 // htmlString += '<p>' + key + ': ' + nestedHTML + '</p>';
+    //                 htmlString += '<p>' + key + ': ' + reportCard + '</p>';
+    //             }
+    //             // else {
+    //             // }               
+    //         }
+    //     }
+    //     return htmlString;
+    // }
+
+    // var targetElement = document.getElementById("cityReport");
+    // var stack = [{ object: reportCard, indent: 0 }];
+
+    // while (stack.length > 0) {
+    // var current = stack.pop();
+    // var keys = Object.keys(current.object);
+
+    // keys.forEach(function(key) {
+    //     var value = current.object[key];
+
+    //     if (typeof value === "object" && value !== null) {
+    //     stack.push({ object: value, indent: current.indent + 1 });
+    //     } else {
+    //     var indentSpaces = "  ".repeat(current.indent);
+    //     var listItem = document.createElement("li");
+    //     listItem.textContent = indentSpaces + key + ": " + value;
+    //     targetElement.appendChild(listItem);
+    //     }
+    //     });
+    // }
+
     
-    debugger
+    // var targetElement = document.getElementById("cityReport");
+    // targetElement.innerHTML = getAllReportScores(reportCard);
+    
     //    var cityOne = document.getElementById("city-one");
 
     //    var rent = document.createElement("ul")
