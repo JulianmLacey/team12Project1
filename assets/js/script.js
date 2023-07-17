@@ -134,16 +134,26 @@ function getHouseOptions(city, state) {
     var bathrooms = document.getElementById("bathrooms");
 
     homeSearch.addEventListener("click", function() {
-        var  bed_rooms = bedrooms.value
+        var bed_rooms = bedrooms.value
         var bath_rooms = bathrooms.value
-            
-        console.log(bed_rooms);
-        console.log(bath_rooms)
         
         var filteredHomes = homes.filter(function(home) {
             return  home.bedrooms === parseInt(bed_rooms) && home.bathrooms === parseInt(bath_rooms);
         })
-        console.log(filteredHomes)
+            filteredHomes.forEach(function(object) {
+                var homeDetails = document.createElement("div");
+                homeDetails.classList.add("object");
+
+                for(var key in object) {
+                    if (object.hasOwnProperty(key)) {
+                        var propertyDetails = document.createElement("p");
+                        propertyDetails.textContent = key + ":" + object[key]
+                        homeDetails.appendChild(propertyDetails)
+            
+                    }
+                }
+                cityHomes.appendChild(homeDetails)
+        })
     })        
 }
 getHouseOptions()

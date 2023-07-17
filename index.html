@@ -5,9 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         .custom-background {
-          background-color: rgba(13, 67, 103, 0.404);
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
           background-size: cover;
-          background-image: url(./assets/images/photo-1449844908441-8829872d2607.avif);
+          background-repeat: no-repeat;
+          background-position: center center;
+          
+        }
+        .custom-column1{
+          background-color: #371dfd;
+          width: 32%;
+          margin-top: 12%;
+          
+        }
+        .custom-column2{
+          background-color: #37d329;
+          width: 30%;
+         margin-left: 53%;
+         
+        }
+        .custom-column3{
+          background-color: green;
+          margin-left: 53%;
         }
         
       </style>
@@ -18,20 +41,22 @@
           crossorigin="anonymous"
         ></script>
 <title>Document</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://unpkg.com/@blaze/css@x.x.x/dist/blaze/blaze.css">
+<script src="https://cdn.jsdelivr.net/npm/blaze@2.2.4/dist/blaze.min.js"></script>
 </head>
-<body class="custom-background"> 
+<body class="custom-background " style="background-image: url(./assets/images/photo-1449844908441-8829872d2607.avif);
+"> 
 
-    <header class="bg-black-800 py-4 px-8 ">
-        <div class="container mx-auto flex items-center justify-center">
-          <a href="#" class="text-green-500 text-7xl font-bold bg-gray-700">BEST PLACE ?</a>
+    <header >
+        <div class="text-6xl" style="text-align: center; background-size: cover;" >
+          <a href="#"  style="color: aqua; text-align: center; background-color: black;">BEST PLACE ?</a>
         </header>
     <section>
-        <p class="text-white text-3xl font-semibold">Search City</p>
+        <p class="text-3xl" style="color: aliceblue;">Search City</p>
     </section>
 
         <form id="search" class="flex">
-            <input id="city-search" type="text" placeholder="Search" class="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input id="city-search" type="text" placeholder="Search" style="display: flex;" >
         </div>
        <!-- <nav class="bg-gray-900">
             <div class="max-w-7xl mx-auto px-4">
@@ -44,13 +69,14 @@
               </div>
             </div>
           </nav>-->
-            <button id="submit-city" type="button" class="px-4 py-2 bg-green-500 text-white font-semibold rounded-r-md hover:bg-blue-600">Search</button>
+            <button id="submit-city" type="button" class="rounded">Search</button>
         </form>
 
-        <div class="p-9 text-6xl text-black flex ml-auto bg-gradient-to-r from-blue-500 to-green-500 animate-gradient bg-cover mt-9 text-center">
+        <div class="c-heading" style=" background:linear-gradient(to right, #37d329, #371dfd); text-align: center; margin-top: 55px;">
             <p>View Best Place?.. information below</p>
         </div>
-
+        
+        
        <!-- <div class="justify-center p-9 text-6xl text-black flex ml-auto bg-green-500 ">
             <p>instructions??</p>
         </div>-->
@@ -63,23 +89,24 @@
         <div id="city-one" class="flex relative top-20 gap-20 mt-9 justify-center">
             <ul class="w-1/4 h-96 bg-gray-100 p-4">
               <div id="city-report">City Name</div>
+      
+
+        <div id="city-one"   >
+            <ul class="custom-column1" >
+              <div id="city-1">City Name</div>
                 <li id="medianRent" class="p-9">Info here</li>
                 <li id="medianHome" class="p-9">Info here</li>
                 <li id="cityReport" class="p-9"></li>
             </ul>
             
-            <div  class=" w-1/4 h-96 bg-gray-100 p-4 ">Column 2
-              <ul id="city-homes">
-                <li class="p-9">Info here</li>
-                <li class="p-9">Info here</li>
-                <li class="p-9">Info here</li>
-              </ul>
+            <div class="custom-column2" >Column 2
+              <div id="city-homes"></div>
             </div>
           
-            <div id="city-three" class="w-1/4 h-96 bg-gray-100 p-4">Column 3
-              <li class="p-9">Info here</li>
-                <li class="p-9" >Info here</li>
-                <li class="p-9" >Info here</li>
+            <div id="city-three" class="custom-column3">Column 3
+              <li >Info here</li>
+                <li  >Info here</li>
+                <li >Info here</li>
         
         
         <script src="./assets/js/script.js"></script>
