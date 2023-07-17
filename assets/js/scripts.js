@@ -33,6 +33,33 @@ getJobs();
 */
 
 
+var container = $("#card-container");
+function renderCard(){
+
+var newCard = $("<div>");
+
+newCard.attr("class", "card");
+
+  var face1 = $("<div>").attr("class", "face face1").appendTo(newCard);
+  var faceContent1 = $("<div>").attr("class", "content").appendTo(face1);
+  $("<h3>").text("JOB TITLE").appendTo(faceContent1);
+
+  var face2 = $("<div>").attr("class", "face face2").appendTo(newCard);
+  var faceContent2 = $("<div>").attr("class", "content").appendTo(face2);
+  $("<p>").text("JOB STUFFF").appendTo(faceContent2);
+
+
+  newCard.appendTo(container);
+
+}
+
+renderCard();
+renderCard();
+renderCard();
+renderCard();
+renderCard();
+
+
 
 //-----------------Get Housing Options-------------------
 var Qcity = 'Austin', Qstate = 'TX';
