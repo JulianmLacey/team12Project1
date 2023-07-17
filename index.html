@@ -54,20 +54,26 @@
        <!-- <div class="justify-center p-9 text-6xl text-black flex ml-auto bg-green-500 ">
             <p>instructions??</p>
         </div>-->
-      
-
+        <form>
+          <input type="number" min="1" value="1"  id="bedrooms">
+          <input type="number" min="1" value="1" id="bathrooms">
+          <button id="submit-rooms" type="button">Search</button>
+        </form>
+          
         <div id="city-one" class="flex relative top-20 gap-20 mt-9 justify-center">
             <ul class="w-1/4 h-96 bg-gray-100 p-4">
-              <div id="city-1">City Name</div>
+              <div id="city-report">City Name</div>
                 <li id="medianRent" class="p-9">Info here</li>
                 <li id="medianHome" class="p-9">Info here</li>
                 <li id="cityReport" class="p-9"></li>
             </ul>
             
-            <div id="city-two" class=" w-1/4 h-96 bg-gray-100 p-4 ">Column 2
-              <li class="p-9">Info here</li>
+            <div  class=" w-1/4 h-96 bg-gray-100 p-4 ">Column 2
+              <ul id="city-homes">
                 <li class="p-9">Info here</li>
                 <li class="p-9">Info here</li>
+                <li class="p-9">Info here</li>
+              </ul>
             </div>
           
             <div id="city-three" class="w-1/4 h-96 bg-gray-100 p-4">Column 3

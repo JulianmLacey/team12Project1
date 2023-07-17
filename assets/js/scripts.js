@@ -35,28 +35,28 @@ getJobs();
 
 
 //-----------------Get Housing Options-------------------
-var Qcity = 'Austin', Qstate = 'TX';
-var Bed_rooms = 2, bath_rooms =2, limit = 10;
+// var Qcity = 'Austin', Qstate = 'TX';
+// var Bed_rooms = 2, bath_rooms =2, limit = 10;
 
-function getHousing(){
-  const settings = {
-    async: true,
-    crossDomain: true,
-    url: 'https://realty-mole-property-api.p.rapidapi.com/saleListings?city=' + Qcity,
-    data: {
-      state: Qstate,
-      bedrooms: Bed_rooms,
-      bathrooms: bath_rooms
-    },
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': '1fc0b1137emsha592badbb2ae9fap1a1cbajsn46535d340b45',
-      'X-RapidAPI-Host': 'realty-mole-property-api.p.rapidapi.com'
-    }
-  };
+// function getHousing(){
+//   const settings = {
+//     async: true,
+//     crossDomain: true,
+//     url: 'https://realty-mole-property-api.p.rapidapi.com/saleListings?city=' + Qcity,
+//     data: {
+//       state: Qstate,
+//       bedrooms: Bed_rooms,
+//       bathrooms: bath_rooms
+//     },
+//     method: 'GET',
+//     headers: {
+//       'X-RapidAPI-Key': '1fc0b1137emsha592badbb2ae9fap1a1cbajsn46535d340b45',
+//       'X-RapidAPI-Host': 'realty-mole-property-api.p.rapidapi.com'
+//     }
+//   };
 
-  $.ajax(settings).done(function (response) {
-    console.log(response);
-  });
-  }
-getHousing();
+//   $.ajax(settings).done(function (response) {
+//     console.log(response);
+//   });
+//   }
+// getHousing();
