@@ -33,6 +33,35 @@
 
 
 
+// var container = $("#card-container");
+// function renderCard(){
+
+// var newCard = $("<div>");
+
+// newCard.attr("class", "card");
+
+//   var face1 = $("<div>").attr("class", "face face1").appendTo(newCard);
+//   var faceContent1 = $("<div>").attr("class", "content").appendTo(face1);
+//   $("<h3>").text("JOB TITLE").appendTo(faceContent1);
+
+//   var face2 = $("<div>").attr("class", "face face2").appendTo(newCard);
+//   var faceContent2 = $("<div>").attr("class", "content").appendTo(face2);
+//   $("<p>").text("Housing Info").appendTo(faceContent2);
+//   var houseListing = $("<p>").attr("class", "houseInfo");
+  // $("<li>").text(housePrice).appendTo(houseListing);
+  // $("<li>").text(bedRooms).appendTo(houseListing);
+  // $("<li>").text(propertyType).appendTo(houseListing);
+  // $("<li>").text(squareFootage).appendTo(houseListing);
+  
+  // up to you if you think it's important
+  // $("<li>").text(yearBuilt).appendTo(houseListing);
+
+//   newCard.appendTo(container);
+
+// }
+
+// renderCard()
+
 var container = $("#card-container");
 function renderCard(){
 
@@ -46,20 +75,33 @@ newCard.attr("class", "card");
 
   var face2 = $("<div>").attr("class", "face face2").appendTo(newCard);
   var faceContent2 = $("<div>").attr("class", "content").appendTo(face2);
-  $("<p>").text("Housing Info").appendTo(faceContent2);
-  var houseListing = $("<p>").attr("class", "houseInfo");
-  $("<li>").text(housePrice).appendTo(houseListing);
-  $("<li>").text(bedRooms).appendTo(houseListing);
-  $("<li>").text(propertyType).appendTo(houseListing);
-  $("<li>").text(squareFootage).appendTo(houseListing);
+  $("<h3>").text("House Stuff").appendTo(faceContent2);
+  $("<p>").text("housePrice").appendTo(faceContent2);
+  $("<p>").text("bedRooms").appendTo(faceContent2);
+  $("<p>").text("propertyType").appendTo(faceContent2);
+  $("<p>").text("squareFootage").appendTo(faceContent2);
   
   // up to you if you think it's important
-  $("<li>").text(yearBuilt).appendTo(houseListing);
+  $("<p>").text("yearBuilt").attr("class", "last").appendTo(faceContent2);
+
+  var divider = $("<div>")
+  
+  divider.attr("class", "divider").appendTo(face2)
+  $("<h3>").text("City Report Card").appendTo(divider);
+  $("<p>").text("Overall Niche Grade").appendTo(divider)
+  $("<p>").text("Public Schools").appendTo(divider)
+  $("<p>").text("Crime & Safety").appendTo(divider)
+  $("<p>").text("Nightlife").appendTo(divider)
+  $("<p>").text("Good for Families").appendTo(divider)
+  $("<p>").text("Weather").appendTo(divider)
+  $("<p>").text("Cost of Living").appendTo(divider)
+  $("<p>").text("Health & Fitness").appendTo(divider)
 
   newCard.appendTo(container);
 
 }
 
+renderCard();
 
 //-----------------Get Housing Options-------------------
 // var Qcity = 'Austin', Qstate = 'TX';
@@ -86,5 +128,4 @@ newCard.attr("class", "card");
 //     console.log(response);
 //   });
 //   }
-
 // getHousing();
