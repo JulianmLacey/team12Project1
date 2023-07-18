@@ -212,7 +212,7 @@ function getJobListings(keywords, location) {
         }]
     
     var cityJobs = document.getElementById("city-jobs");
-   console.log(responseText[1]["Salary"])
+  
     
 
 }

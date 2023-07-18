@@ -1,3 +1,9 @@
+housing {
+price: $$$$,
+bedrooms: 2,
+bathroom: 2,
+Property Type : "Condo", "Home" etc etc,
+squareFootage: 1111,
+yearBuilt** : 2023
 
-![example api](image.png)<br>
-![example api2](image-1.png)
+}

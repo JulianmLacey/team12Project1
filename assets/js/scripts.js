@@ -1,37 +1,64 @@
-/*
 
-//-----------------Get Job Options-------------------
-var url = "https://jooble.org/api/";
-var key = "66db19d3-8777-40aa-a3c1-d214c3c4b8ea";
-var SearchKeywords = 'Software Engineer';
-var searchJobLocation = 'Seattle';
-var params = "{ keywords: "+SearchKeywords +", location: "+searchJobLocation;
 
-function getJobs(){
-//create xmlHttpRequest object
-var http = new XMLHttpRequest();
-//open connection. true - asynchronous, false - synchronous
-http.open("POST", url + key, true);
+// -----------------Get Job Options-------------------
+// var url = "https://jooble.org/api/";
+// var key = "66db19d3-8777-40aa-a3c1-d214c3c4b8ea";
+// var SearchKeywords = 'Software Engineer';
+// var searchJobLocation = 'Seattle';
+// var params = "{ keywords: "+SearchKeywords +", location: "+searchJobLocation;
 
-//Send the proper header information
-http.setRequestHeader("Content-type", "application/json");
+// function getJobs(){
+// //create xmlHttpRequest object
+// var http = new XMLHttpRequest();
+// //open connection. true - asynchronous, false - synchronous
+// http.open("POST", url + key, true);
+
+// //Send the proper header information
+// http.setRequestHeader("Content-type", "application/json");
 	
-//Callback when the state changes
-http.onreadystatechange = function() {
-	if(http.readyState == 4 && http.status == 200) {
-		alert(http.responseText);
-    console.log(JSON.parse(http.responseText));
-	}
+// //Callback when the state changes
+// http.onreadystatechange = function() {
+// 	if(http.readyState == 4 && http.status == 200) {
+// 		alert(http.responseText);
+//     console.log(JSON.parse(http.responseText));
+// 	}
+// }
+// //Send request to the server
+// http.send(params);
+// console.log("Got Jobs")
+// }
+
+// getJobs();
+
+
+
+
+var container = $("#card-container");
+function renderCard(){
+
+var newCard = $("<div>");
+
+newCard.attr("class", "card");
+
+  var face1 = $("<div>").attr("class", "face face1").appendTo(newCard);
+  var faceContent1 = $("<div>").attr("class", "content").appendTo(face1);
+  $("<h3>").text("JOB TITLE").appendTo(faceContent1);
+
+  var face2 = $("<div>").attr("class", "face face2").appendTo(newCard);
+  var faceContent2 = $("<div>").attr("class", "content").appendTo(face2);
+  $("<p>").text("Housing Info").appendTo(faceContent2);
+  var houseListing = $("<p>").attr("class", "houseInfo");
+  $("<li>").text(housePrice).appendTo(houseListing);
+  $("<li>").text(bedRooms).appendTo(houseListing);
+  $("<li>").text(propertyType).appendTo(houseListing);
+  $("<li>").text(squareFootage).appendTo(houseListing);
+  
+  // up to you if you think it's important
+  $("<li>").text(yearBuilt).appendTo(houseListing);
+
+  newCard.appendTo(container);
+
 }
-//Send request to the server
-http.send(params);
-console.log("Got Jobs")
-}
-
-getJobs();
-
-*/
-
 
 
 //-----------------Get Housing Options-------------------
@@ -59,4 +86,5 @@ getJobs();
 //     console.log(response);
 //   });
 //   }
+
 // getHousing();
