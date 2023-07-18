@@ -95,12 +95,11 @@ header div ul li h2{
 }
 .hero{
 height: 600px;
-background-image: url(../images/Skyline.jpg);
-background-blend-mode: saturation;
+background-image: url(/assets/images/photo-1535391879778-3bae11d29a24.avif);
 background-color: #02090e8f;
 background-size: cover;
 text-align: center;
-
+background-position: center;
 }
 
 .hero h2{
