@@ -7,13 +7,13 @@
     },
     "main": "index.js",
     "scripts": {
+
       "start": "node index.js"
+
     },
     "dependencies": {
       "ejs": "^3.1.5",
       "express": "^4.15.2",
-      "indeed-job-scraper": "^4.0.2",
-      "indeed-scraper": "^3.1.4",
       "particles.js": "^2.0.0"
     },
     "devDependencies": {
