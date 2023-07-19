@@ -62,6 +62,9 @@
 
 // renderCard()
 
+
+$("#searchButton").on("click", renderCard)
+
 var container = $("#card-container");
 function renderCard(){
 
@@ -72,6 +75,7 @@ newCard.attr("class", "card");
   var face1 = $("<div>").attr("class", "face face1").appendTo(newCard);
   var faceContent1 = $("<div>").attr("class", "content").appendTo(face1);
   $("<h3>").text("JOB TITLE").appendTo(faceContent1);
+  $("<h3>").text("Salary: ").appendTo(faceContent1);
 
   var face2 = $("<div>").attr("class", "face face2").appendTo(newCard);
   var faceContent2 = $("<div>").attr("class", "content").appendTo(face2);
@@ -101,7 +105,6 @@ newCard.attr("class", "card");
 
 }
 
-renderCard();
 
 //-----------------Get Housing Options-------------------
 // var Qcity = 'Austin', Qstate = 'TX';
