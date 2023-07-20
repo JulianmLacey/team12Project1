@@ -18,7 +18,7 @@ Once on the home page, the user will be enter a job title that they are interest
 ![Job Search](</assets/images/Best Place Job Search.gif>)<br>
 **Users enter "Software Engineer" for their job search**
 
-Once the user has selected a city and filled out a number of bedrooms and bathrooms they wish their future home to have, they will be presented with a card.!
+Once the user has selected a city and filled out a number of bedrooms and bathrooms they wish their future home to have, the app will send a request to Jooble and Realty Mole APIs and create a card out of the response.
 
 ![Best Place Full Demo](</assets/images/Best Place Card Demo.gif>)<br>
 **User has entered all parameters for search query and app will populate a card to display info**
